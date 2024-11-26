@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <div class="container mt-4">
+    <h1>Edit Post</h1>
+    <form action="/posts/edit/<%= post.id %>" method="post" class="mb-4">
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" value="<%= post.title %>" required>
+      </div>
+      <div class="form-group">
+        <textarea name="content" class="form-control" required><%= post.content %></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning button-warning">Update Post</button>
+    </form>
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

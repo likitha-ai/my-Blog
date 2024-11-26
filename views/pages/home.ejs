@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <div class="container mt-4">
+    <h1 class="text-primary mb-4 text-center">Welcome to the Blog</h1>
+    <form action="/posts/new" method="post" class="mb-4">
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Title" required>
+      </div>
+      <div class="form-group">
+        <textarea name="content" class="form-control" placeholder="Content" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success button-primary">Create Post</button>
+    </form>
+
+    <h2 class="text-info mb-4 text-center">Posts</h2>
+    <ul class="list-group">
+      <% posts.forEach(post => { %>
+        <li class="list-group-item">
+          <a href="/posts/<%= post.id %>" class="text-decoration-none"><%= post.title %></a>
+          <div>
+            <form action="/posts/delete/<%= post.id %>" method="post" class="d-inline">
+              <button type="submit" class="btn btn-danger button-danger btn-sm">Delete</button>
+            </form>
+            <a href="/posts/edit/<%= post.id %>" class="btn btn-warning button-warning btn-sm ml-2">Edit</a>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

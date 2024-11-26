@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= post.title %></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <div class="container mt-4">
+    <h1 class="text-primary mb-4 text-center"><%= post.title %></h1>
+    <div class="content mb-4">
+      <p><%= post.content %></p>
+    </div>
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

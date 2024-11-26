@@ -1,0 +1,100 @@
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Fallback for older browsers */
+  background-size: 400% 400%;
+  animation: slideBackground 10s ease infinite;
+  color: #333;
+}
+
+@keyframes slideBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  background: #563d7c;
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+}
+
+footer {
+  background: #563d7c;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+h1, h2 {
+  color: #563d7c;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button-primary {
+  background: #28a745;
+  color: white;
+}
+
+.button-primary:hover {
+  background: #218838;
+}
+
+.button-warning {
+  background: #ffc107;
+  color: white;
+}
+
+.button-warning:hover {
+  background: #e0a800;
+}
+
+.button-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.button-danger:hover {
+  background: #c82333;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item a {
+  color: #563d7c;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
